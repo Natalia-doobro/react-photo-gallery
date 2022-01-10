@@ -6,6 +6,7 @@ import Button from "../Button";
 import Idle from "../Idle";
 import Loader from "../Loader";
 import s from "./ImageGallery.module.css";
+require('dotenv').config()
 
 class ImageGallery extends Component {
   state = {
@@ -20,7 +21,7 @@ class ImageGallery extends Component {
   componentDidUpdate(prevProps, prevState) {
     const prevProp = prevProps.inquiry;
     const newProp = this.props.inquiry;
-    const key = "23116655-204395131977af9122e6962dd";
+    const key = process.env.REACT_APP_API_KEY;
     const prevPage = prevState.page;
     const { page } = this.state;
 
